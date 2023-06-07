@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const generateCheckbox = (title, done, index) => {
+        return `
+          <div>
+            <input type="checkbox" id="${index}" ${done && "checked"} />
+            <label for="${index}">${title}</label>
+          </div>
+        `;
+      };
+
+      const tasks = [
+        { title: "Do 1", done: false },
+        { title: "Do 2", done: false },
+        { title: "Do 3", done: false },
+        { title: "Do 4", done: true },
+        { title: "Do 5", done: false },
+        { title: "Do 6", done: false },
+        { title: "Do 7", done: false },
+        { title: "Do 8", done: false },
+      ];
+
+      const app = document.getElementById("app");
+      tasks.forEach(({ title, done }, index) => {
+        app.insertAdjacentHTML(
+          "beforeend",
+          generateCheckbox(title, done, index)
+        );
+      });
+    </script>
+  </body>
+</html>
