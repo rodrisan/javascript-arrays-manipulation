@@ -80,3 +80,8 @@ const range = numbers.reduce(
   }
 );
 console.log("range:", range);
+
+function calcSum(numbers) {
+  return numbers.reduce((sum, element) => sum + element, 0);
+}
+console.log(calcSum(items));
