@@ -43,3 +43,18 @@ const response3 = Object.values(calendars).flatMap(
   }
 );
 console.log("flatten objects array", response3);
+
+// Test
+
+const input = [
+  "Beautiful is better than ugly",
+  "Explicit is better than implicit",
+  "Simple is better than complex",
+  "Complex is better than complicated",
+];
+
+function countWords(array) {
+  const result = array.flatMap((element) => element.split(" "));
+  return Array(...result).length;
+}
+console.log("total words: ", countWords(input));
